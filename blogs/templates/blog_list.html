@@ -1,0 +1,33 @@
+<h1>Blog List</h1>
+<br />
+<button>
+    <a href="{% url 'blog_create' %}">New Blog</a>
+</button>
+
+<div>
+   
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Description</th>
+    </tr>
+
+{% for blog in blogs %}
+    <tr>
+        <td>
+            <a href="{% url 'blog_detail' blog.id %}">{{ blog.title}}</a>
+        </td>
+        <td>{{ blog.date }}</td>
+        <td>{{ blog.description }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>No Blogs</td>
+        <td></td>
+        <td></td>
+    </tr>
+{% endfor %}
+
+</table>
+</div>

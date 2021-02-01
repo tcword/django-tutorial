@@ -1,0 +1,13 @@
+<div>
+    <h1>Create a new blog</h1>
+    <br />
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type='submit' vlaue='Submit' />
+    </form>
+    <br />
+    <p style="color:red;">
+        {{ error }}
+    </p>
+</div>
